@@ -24,12 +24,12 @@
 
 package validador;
 
-import javax.swing.JFrame;
-import javax.swing.JPanel;
 import javax.swing.JButton;
-import javax.swing.JLabel;
-import javax.swing.JTable;
 import javax.swing.JFileChooser;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -46,6 +46,7 @@ public class PantallaPrincipal {
   private JLabel labelArchivoSeleccionado;
   private JButton botonProcesarArchivo;
   private JTable tablaParesMaterias;
+  private JLabel imagenLogo;
 
   // Declaracion de FileChooser para seleccionar el archivo CSV
   final JFileChooser fc = new JFileChooser();
