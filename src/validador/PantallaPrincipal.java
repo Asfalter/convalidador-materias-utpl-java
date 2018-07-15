@@ -100,9 +100,11 @@ public class PantallaPrincipal {
 
             DefaultTableModel modeloTablaParesMaterias = new DefaultTableModel(null, columnasTabla);
 
+            // Medidas de similitud usadas
             Jaccard similaridadJaccar = new Jaccard();
             LongestCommonSubsequence similaridadLCS = new LongestCommonSubsequence();
 
+            // Comparar las materias del CSV con las materias de la BDD
             for (MateriaData materiaEstudiante : materiasEstudiante) {
               for (MateriaData materiaBase : materiasBase) {
 
@@ -114,6 +116,7 @@ public class PantallaPrincipal {
                 // System.out.println(similaridadLCS.distance(materiaEstudiante.getMateriaNombre(),
                 // materiaBase.getMateriaNombre()) + "     ");
 
+                // Si Jaccard es >= 0.7 o LCS es <= 5, agregar par de materias al modelo
                 if ((similaridadJaccar.similarity(
                             materiaEstudiante.getMateriaNombre(), materiaBase.getMateriaNombre())
                         >= 0.7)
@@ -138,7 +141,7 @@ public class PantallaPrincipal {
               }
             }
 
-            tablaParesMaterias.setModel(modeloTablaParesMaterias);
+            tablaParesMaterias.setModel(modeloTablaParesMaterias); // Agregar modelo a la tabla
           }
         });
   }
